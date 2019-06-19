@@ -21,7 +21,7 @@ namespace MyShop.WebUI.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MyConString", throwIfV1Schema: false)
         {
         }
 

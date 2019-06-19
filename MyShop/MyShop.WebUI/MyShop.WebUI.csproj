@@ -199,6 +199,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906191232461_AddAspAuth.cs" />
+    <Compile Include="Migrations\201906191232461_AddAspAuth.Designer.cs">
+      <DependentUpon>201906191232461_AddAspAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -313,6 +318,11 @@
       <Project>{c4efaac1-e8a5-4acc-9ed5-dc68f6e885c1}</Project>
       <Name>MyShop.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906191232461_AddAspAuth.resx">
+      <DependentUpon>201906191232461_AddAspAuth.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
