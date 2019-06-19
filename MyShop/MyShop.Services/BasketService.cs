@@ -4,8 +4,6 @@ using MyShop.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace MyShop.Services
@@ -19,8 +17,8 @@ namespace MyShop.Services
 
         public BasketService(IRepository<Product> ProductContext, IRepository<Basket> BasketContext)
         {
-            this.basketContext = BasketContext;
-            this.productContext = ProductContext;
+            basketContext = BasketContext;
+            productContext = ProductContext;
         }
 
         private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
@@ -154,6 +152,13 @@ namespace MyShop.Services
             {
                 return model;
             }
+        }
+
+        public void ClearBasket(HttpContextBase httpContext)
+        {
+            Basket basket = GetBasket(httpContext, false);
+            basket.BasketItems.Clear();
+            basketContext.Commit();
         }
     }
 }
